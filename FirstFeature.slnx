@@ -3,6 +3,9 @@
     <Project Path="Services.Contracts/Services.Contracts.csproj" Id="cc7af835-9eb3-421c-8bc6-2e636d0fdaf1" />
     <Project Path="Services.Impl/Services.Impl.csproj" Id="a8a189a2-c6b2-4228-a72e-7abd01439387" />
   </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="Tests/Services.Tests/Services.Tests.csproj" Id="d7450cd4-23cd-4619-9daa-b565c223a6cf" />
+  </Folder>
   <Project Path="Application/Application.csproj" Id="9859f271-34da-4753-a278-98c61e54d621" />
   <Project Path="Data/Data.csproj" Id="714b6961-2af9-42e0-bcd4-5296abcf562e" />
   <Project Path="Domain/Domain.csproj" Id="3dfa138b-b1ab-440b-8885-8740c3d6442c" />

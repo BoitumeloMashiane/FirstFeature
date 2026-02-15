@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using Data.Repositories;
+using Domain;
 using Microsoft.Extensions.Logging;
 using Services.Contracts;
 using System;
@@ -9,11 +10,13 @@ namespace Services.Impl
 {
     public class OrderService : IOrderService
     {
+        private readonly IOrderRepository _orderRepository;
         private readonly INotificationService _notifications;
         private readonly ILogger<OrderService> _logger;
 
-        public OrderService(INotificationService notifications, ILogger<OrderService> logger)
+        public OrderService(IOrderRepository orderRepository, INotificationService notifications, ILogger<OrderService> logger)
         {
+            _orderRepository = orderRepository;
             _notifications = notifications;
             _logger = logger;
         }
@@ -31,6 +34,8 @@ namespace Services.Impl
                 Amount = amount,
                 CreatedAt = DateTime.UtcNow
             };
+
+            await _orderRepository.SaveAsync(order);
 
             await _notifications.SendAsync(
                 customerEmail,
