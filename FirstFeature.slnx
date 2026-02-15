@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/Services/">
+    <Project Path="Services.Contracts/Services.Contracts.csproj" Id="cc7af835-9eb3-421c-8bc6-2e636d0fdaf1" />
+    <Project Path="Services.Impl/Services.Impl.csproj" Id="a8a189a2-c6b2-4228-a72e-7abd01439387" />
+  </Folder>
+  <Project Path="Application/Application.csproj" Id="9859f271-34da-4753-a278-98c61e54d621" />
+  <Project Path="Data/Data.csproj" Id="714b6961-2af9-42e0-bcd4-5296abcf562e" />
+  <Project Path="Domain/Domain.csproj" Id="3dfa138b-b1ab-440b-8885-8740c3d6442c" />
+  <Project Path="Presentation.Api/Presentation.Api.csproj" Id="b9af9b65-755f-4ba8-b37e-8170442b6e8d" />
+</Solution>
