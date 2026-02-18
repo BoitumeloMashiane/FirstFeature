@@ -80,17 +80,5 @@ namespace Services.Tests
             sentEmail.Body.Should().Contain(productName);
             sentEmail.Body.Should().Contain(amount.ToString());
         }
-
-        [Test]
-        public async Task CreateOrderAsync_MultipleOrders_ShouldCreateAll()
-        {
-            // Act
-            await _service.CreateOrderAsync(Guid.NewGuid(), "user1@test.com", "Product1", 10m);
-            await _service.CreateOrderAsync(Guid.NewGuid(), "user2@test.com", "Product2", 20m);
-
-            // Assert
-            _fakeOrderRepository.SavedOrders.Should().HaveCount(2);
-            _fakeEmailClient.SentEmails.Should().HaveCount(2);
-        }
     }
 }

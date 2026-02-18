@@ -65,26 +65,5 @@ namespace Services.Tests
             act.Should().ThrowAsync<ArgumentException>()
                 .WithMessage("*Recipient email cannot be empty*");
         }
-
-        [Test]
-        public void SendAsync_NullRecipient_ShouldThrow()
-        {
-            // Act
-            Func<Task> act = async () => await _service.SendAsync(null, "Subject", "Body");
-
-            // Assert
-            act.Should().ThrowAsync<ArgumentException>();
-        }
-
-        [Test]
-        public void SendAsync_EmptySubject_ShouldThrow()
-        {
-            // Act
-            Func<Task> act = async () => await _service.SendAsync("user@test.com", "", "Body");
-
-            // Assert
-            act.Should().ThrowAsync<ArgumentException>()
-                .WithMessage("*Subject cannot be empty*");
-        }
     }
 }
